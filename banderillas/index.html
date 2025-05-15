@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banderillas Mexicanas - Menú</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --naranja: #FF7B25;
+            --naranja-claro: #FFA059;
+            --naranja-oscuro: #E05A00;
+            --blanco: #FFFFFF;
+            --negro: #333333;
+            --gris: #F5F5F5;
+            --verde: #28a745;
+            --rojo: #dc3545;
+            --azul: #007bff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gris);
+            color: var(--negro);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slogan {
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .menu-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            background-color: var(--naranja);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .item-image {
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .menu-item:hover .item-image img {
+            transform: scale(1.1);
+        }
+        
+        .item-content {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--negro);
+        }
+        
+        .item-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .item-price {
+            font-weight: bold;
+            color: var(--naranja-oscuro);
+            font-size: 1.3rem;
+            text-align: right;
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, var(--naranja), var(--naranja-claro));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .promo-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promo-text {
+            font-size: 1rem;
+        }
+        
+        .instagram-style {
+            border: 3px solid var(--naranja);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .instagram-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .instagram-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--naranja);
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .instagram-username {
+            font-weight: bold;
+        }
+        
+        .instagram-post {
+            margin-bottom: 1.5rem;
+        }
+        
+        .instagram-post img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .instagram-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .instagram-action {
+            color: var(--negro);
+            font-size: 1.5rem;
+        }
+        
+        .instagram-likes {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .instagram-caption {
+            color: var(--negro);
+        }
+        
+        footer {
+            background-color: var(--naranja-oscuro);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--gris);
+        }
+        
+        .footer-info {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Nuevos estilos para el botón de pedidos */
+        .order-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--naranja);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .order-button:hover {
+            background-color: var(--naranja-oscuro);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Estilos para el panel de pedidos */
+        .pedido-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .pedido-panel.active {
+            right: 0;
+        }
+        
+        .pedido-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pedido-header h2 {
+            color: var(--naranja);
+            margin: 0;
+        }
+        
+        .close-pedido {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .pedido-items {
+            margin: 20px 0;
+        }
+        
+        .pedido-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .item-cantidad {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .item-cantidad button {
+            background-color: var(--naranja);
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pedido-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: right;
+            margin: 20px 0;
+            color: var(--naranja-oscuro);
+        }
+        
+        .btn-enviar {
+            background-color: var(--naranja);
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-enviar:hover {
+            background-color: var(--naranja-oscuro);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Botones de cantidad en los items del menú */
+        .item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            background-color: var(--naranja);
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-display {
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        /* Estilos para el panel de tickets */
+        .ticket-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1200;
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+        
+        .ticket-panel.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        
+        .ticket-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 10px;
+        }
+        
+        .ticket-header h2 {
+            color: var(--naranja);
+        }
+        
+        .ticket-body {
+            margin-bottom: 20px;
+        }
+        
+        .ticket-info {
+            margin-bottom: 15px;
+        }
+        
+        .ticket-items {
+            margin: 15px 0;
+        }
+        
+        .ticket-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .ticket-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+            border-top: 2px dashed #ccc;
+            padding-top: 10px;
+        }
+        
+        .ticket-footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .ticket-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .ticket-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .ticket-btn.print {
+            background-color: var(--azul);
+            color: white;
+        }
+        
+        .ticket-btn.close {
+            background-color: var(--rojo);
+            color: white;
+        }
+        
+        /* Estilos para el panel de pedidos anteriores */
+        .pedidos-anteriores-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .pedidos-anteriores-panel.active {
+            right: 0;
+        }
+        
+        .pedidos-anteriores-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pedidos-anteriores-header h2 {
+            color: var(--naranja);
+            margin: 0;
+        }
+        
+        .close-pedidos-anteriores {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .pedidos-lista {
+            margin-top: 20px;
+        }
+        
+        .pedido-anterior {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pedido-anterior-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--naranja);
+        }
+        
+        .pedido-anterior-items {
+            margin-bottom: 10px;
+        }
+        
+        .pedido-anterior-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .pedido-anterior-total {
+            text-align: right;
+            font-weight: bold;
+            border-top: 1px dashed #ddd;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+        
+        /* Estilos para extras */
+        .extras-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .extras-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--naranja);
+        }
+        
+        .extras-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .extra-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .extra-checkbox {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .extra-label {
+            font-size: 0.9rem;
+        }
+        
+        .extra-price {
+            font-size: 0.8rem;
+            color: var(--naranja);
+            margin-left: auto;
+        }
+        
+        /* Botón para ver pedidos anteriores */
+        .ver-pedidos-button {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background-color: var(--verde);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .ver-pedidos-button:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Nuevos estilos para edición de pedidos */
+        .edit-pedido-btn {
+            background-color: var(--azul);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .edit-pedido-btn:hover {
+            background-color: #0069d9;
+        }
+
+        .pedido-anterior-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .repetir-pedido-btn {
+            background-color: var(--verde);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .repetir-pedido-btn:hover {
+            background-color: #218838;
+        }
+
+        .imprimir-pedido-btn {
+            background-color: var(--naranja);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .imprimir-pedido-btn:hover {
+            background-color: var(--naranja-oscuro);
+        }
+
+        /* Estilos para el modal de edición */
+        .edit-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1300;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edit-modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .edit-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .edit-modal-header h3 {
+            color: var(--naranja);
+            margin: 0;
+        }
+
+        .close-edit-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .edit-modal-body {
+            margin-bottom: 20px;
+        }
+
+        .edit-modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .save-edit-btn {
+            background-color: var(--verde);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cancel-edit-btn {
+            background-color: var(--rojo);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Estilos para el ticket pequeño */
+        .ticket-panel.small {
+            max-width: 300px;
+            padding: 15px;
+            font-size: 14px;
+        }
+        
+        .ticket-panel.small .ticket-header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .ticket-panel.small .ticket-header p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .ticket-panel.small .ticket-info p {
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .ticket-panel.small .ticket-item {
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+        }
+        
+        .ticket-panel.small .ticket-total {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+        
+        .ticket-panel.small .ticket-footer {
+            font-size: 0.7rem;
+            margin-top: 10px;
+        }
+        
+        .ticket-panel.small .ticket-actions {
+            margin-top: 10px;
+        }
+        
+        .ticket-panel.small .ticket-btn {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 600px) {
+            .menu-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .item-image {
+                height: 200px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .order-button, .ver-pedidos-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+            
+            .ver-pedidos-button {
+                bottom: 80px;
+            }
+            
+            .pedido-panel, .pedidos-anteriores-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .extras-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ticket-panel.small {
+                width: 95%;
+                max-width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BANDERILLAS HERRERA</div>
+        <div class="slogan">SABORES QUE EXPLOTAN EN TU BOCA</div>
+    </header>
+    
+    <div class="container">
+        <div class="promo-banner">
+            <div class="promo-title">¡OFERTA ESPECIAL!</div>
+            <div class="promo-text"> 1 Charola Banderillas de Ramen con 1 Coca-Cola por solo $90 pesos</div>
+        </div>
+        
+        <div class="instagram-style">
+            <div class="instagram-header">
+                <div class="instagram-avatar">BH</div>
+                <div class="instagram-username">banderillas_herrera</div>
+            </div>
+            <div class="instagram-post">
+                <img src="imagenes/logo.png" alt="Banderillas Mexicanas">
+                <div class="instagram-actions">
+                    <div class="instagram-action"><i class="far fa-heart"></i></div>
+                    <div class="instagram-action"><i class="far fa-comment"></i></div>
+                    <div class="instagram-action"><i class="far fa-share-square"></i></div>
+                </div>
+                <div class="instagram-likes">1,243 me gusta</div>
+                <div class="instagram-caption">
+                    <strong>banderillas_herrera</strong> Nuestras deliciosas banderillas recién preparadas con los mejores ingredientes. ¡Pide las tuyas hoy! #BanderillasMexicanas #ComidaCallejera
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <div class="section-title">BANDERILLAS COREANAS</div>
+            <div class="menu-items">
+                <div class="menu-item" data-id="1" data-name="BANDERILLA SENCILLA" data-price="60">
+                    <div class="item-image">
+                        <img src="imagenes/1.png" alt="Banderilla Sencilla">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">BANDERILLA SENCILLA</div>
+                            <div class="item-description">Deliciosa combinación de sabores tradicionales con chile, limón y salsa especial.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="1">-</button>
+                                <span class="quantity-display" data-id="1">0</span>
+                                <button class="quantity-btn plus" data-id="1">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$60 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="2" data-name="BANDERILLA DORITO Y TAKIS" data-price="80">
+                    <div class="item-image">
+                        <img src="imagenes/2.png" alt="Banderilla Dorito y Takis">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">BANDERILLA DORITO Y TAKIS</div>
+                            <div class="item-description">La combinación crujiente perfecta con nuestros sabores tradicionales.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="2">-</button>
+                                <span class="quantity-display" data-id="2">0</span>
+                                <button class="quantity-btn plus" data-id="2">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$80 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="3" data-name="BANDERILLA DORITO" data-price="80">
+                    <div class="item-image">
+                        <img src="imagenes/3.png" alt="Banderilla Dorito">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">BANDERILLA DORITO</div>
+                            <div class="item-description">El clásico sabor de Doritos con nuestro toque especial.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="3">-</button>
+                                <span class="quantity-display" data-id="3">0</span>
+                                <button class="quantity-btn plus" data-id="3">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$80 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="4" data-name="BANDERILLA RAMEN" data-price="80">
+                    <div class="item-image">
+                        <img src="imagenes/4.png" alt="Banderilla Ramen">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">BANDERILLA RAMEN</div>
+                            <div class="item-description">La textura única del ramen con nuestros sabores mexicanos.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="4">-</button>
+                                <span class="quantity-display" data-id="4">0</span>
+                                <button class="quantity-btn plus" data-id="4">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$80 PESOS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nueva sección de refrescos -->
+        <div class="menu-section">
+            <div class="section-title">REFRESCOS</div>
+            <div class="menu-items">
+                <div class="menu-item" data-id="5" data-name="COCA-COLA 600ml" data-price="25">
+                    <div class="item-image">
+                        <img src="imagenes/coca-cola.webp" alt="Coca-Cola">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">COCA-COLA 600ml</div>
+                            <div class="item-description">Refresco de cola en presentación de 600ml.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="5">-</button>
+                                <span class="quantity-display" data-id="5">0</span>
+                                <button class="quantity-btn plus" data-id="5">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$25 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="6" data-name="SPRITE 600ml" data-price="25">
+                    <div class="item-image">
+                        <img src="imagenes/sprite.jpg" alt="Sprite">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">SPRITE 600ml</div>
+                            <div class="item-description">Refresco de limón en presentación de 600ml.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="6">-</button>
+                                <span class="quantity-display" data-id="6">0</span>
+                                <button class="quantity-btn plus" data-id="6">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$25 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="7" data-name="FANTA 600ml" data-price="25">
+                    <div class="item-image">
+                        <img src="imagenes/fanta.jpg" alt="Fanta">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">FANTA 600ml</div>
+                            <div class="item-description">Refresco de naranja en presentación de 600ml.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="7">-</button>
+                                <span class="quantity-display" data-id="7">0</span>
+                                <button class="quantity-btn plus" data-id="7">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$25 PESOS</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="8" data-name="AGUA MINERAL 500ml" data-price="15">
+                    <div class="item-image">
+                        <img src="imagenes/agua natural.webp" alt="Agua Mineral">
+                    </div>
+                    <div class="item-content">
+                        <div>
+                            <div class="item-title">AGUA MINERAL 500ml</div>
+                            <div class="item-description">Agua mineral natural en presentación de 500ml.</div>
+                            <div class="item-actions">
+                                <button class="quantity-btn minus" data-id="8">-</button>
+                                <span class="quantity-display" data-id="8">0</span>
+                                <button class="quantity-btn plus" data-id="8">+</button>
+                            </div>
+                        </div>
+                        <div class="item-price">$15 PESOS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botón flotante para pedidos -->
+    <button class="order-button" id="orderButton">
+        <i class="fas fa-shopping-cart"></i> Hacer Pedido
+    </button>
+
+    <!-- Botón flotante para ver pedidos anteriores -->
+    <button class="ver-pedidos-button" id="verPedidosButton">
+        <i class="fas fa-history"></i> Pedidos
+    </button>
+    
+    <!-- Panel de pedidos -->
+    <div class="overlay" id="overlay"></div>
+    <div class="pedido-panel" id="pedidoPanel">
+        <div class="pedido-header">
+            <h2>Tu Pedido</h2>
+            <button class="close-pedido" id="closePedido">&times;</button>
+        </div>
+        
+        <form id="pedidoForm">
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="direccion">Dirección de entrega:</label>
+                <textarea id="direccion" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="notas">Notas adicionales:</label>
+                <textarea id="notas" rows="2" placeholder="Indicaciones especiales, alergias, etc."></textarea>
+            </div>
+            
+            <!-- Sección de extras -->
+            <div class="extras-container">
+                <div class="extras-title">SALSAS Y ADEREZOS EXTRA ($5 c/u)</div>
+                <div class="extras-grid">
+                    <div class="extra-item">
+                        <input type="checkbox" class="extra-checkbox" id="salsa-valentina" data-name="Salsa Valentina" data-price="5">
+                        <label class="extra-label" for="salsa-valentina">Salsa Valentina</label>
+                        <span class="extra-price">$5</span>
+                    </div>
+                    <div class="extra-item">
+                        <input type="checkbox" class="extra-checkbox" id="catsup" data-name="Catsup" data-price="5">
+                        <label class="extra-label" for="catsup">Catsup</label>
+                        <span class="extra-price">$5</span>
+                    </div>
+                    <div class="extra-item">
+                        <input type="checkbox" class="extra-checkbox" id="mostaza" data-name="Mostaza" data-price="5">
+                        <label class="extra-label" for="mostaza">Mostaza</label>
+                        <span class="extra-price">$5</span>
+                    </div>
+                    <div class="extra-item">
+                        <input type="checkbox" class="extra-checkbox" id="aderezo" data-name="Aderezo Ranch" data-price="5">
+                        <label class="extra-label" for="aderezo">Aderezo Ranch</label>
+                        <span class="extra-price">$5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pedido-items" id="pedidoItems">
+                <!-- Los items del pedido se agregarán aquí dinámicamente -->
+            </div>
+            
+            <div class="pedido-total">
+                Total: $<span id="totalPedido">0</span>
+            </div>
+            
+            <button type="submit" class="btn-enviar">
+                <i class="fas fa-paper-plane"></i> Confirmar Pedido
+            </button>
+        </form>
+    </div>
+
+    <!-- Panel de pedidos anteriores -->
+    <div class="pedidos-anteriores-panel" id="pedidosAnterioresPanel">
+        <div class="pedidos-anteriores-header">
+            <h2>Pedidos Anteriores</h2>
+            <button class="close-pedidos-anteriores" id="closePedidosAnteriores">&times;</button>
+        </div>
+        
+        <div class="pedidos-lista" id="pedidosLista">
+            <!-- Los pedidos anteriores se mostrarán aquí -->
+        </div>
+    </div>
+    
+    <!-- Panel de ticket -->
+    <div class="ticket-panel" id="ticketPanel">
+        <div class="ticket-header">
+            <h2>BANDERILLAS HERRERA</h2>
+            <p>Ticket de Compra</p>
+        </div>
+        
+        <div class="ticket-body">
+            <div class="ticket-info">
+                <p><strong>Cliente:</strong> <span id="ticketNombre"></span></p>
+                <p><strong>Teléfono:</strong> <span id="ticketTelefono"></span></p>
+                <p><strong>Dirección:</strong> <span id="ticketDireccion"></span></p>
+                <p><strong>Fecha:</strong> <span id="ticketFecha"></span></p>
+                <p><strong>Notas:</strong> <span id="ticketNotas"></span></p>
+            </div>
+            
+            <div class="ticket-items" id="ticketItems">
+                <!-- Los items del ticket se agregarán aquí -->
+            </div>
+            
+            <div class="ticket-total">
+                <p><strong>TOTAL:</strong> $<span id="ticketTotal"></span></p>
+            </div>
+            
+            <div class="ticket-footer">
+                <p>¡Gracias por su compra!</p>
+                <p>Vuelva pronto</p>
+            </div>
+            
+            <div class="ticket-actions">
+                <button class="ticket-btn print" id="printTicketBtn">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="ticket-btn close" id="closeTicketBtn">
+                    <i class="fas fa-times"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar pedidos -->
+    <div class="edit-modal" id="editModal">
+        <div class="edit-modal-content">
+            <div class="edit-modal-header">
+                <h3>Editar Pedido</h3>
+                <button class="close-edit-modal" id="closeEditModal">&times;</button>
+            </div>
+            <div class="edit-modal-body" id="editModalBody">
+                <!-- Contenido del modal se agregará dinámicamente -->
+            </div>
+            <div class="edit-modal-footer">
+                <button class="cancel-edit-btn" id="cancelEditBtn">Cancelar</button>
+                <button class="save-edit-btn" id="saveEditBtn">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">BANDERILLAS HERRERA</div>
+            <div>Los auténticos sabores de la comida callejera mexicana</div>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div class="footer-info">
+                <p>Horario: Lunes a Domingo 10:00 AM - 8:00 PM</p>
+                <p>Teléfono: 55 1234 5678</p>
+                <p>Ubicación: PIEDRAS NEGRAS</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Objeto para almacenar el pedido
+        const pedido = {
+            items: {},
+            extras: {},
+            total: 0,
+            cliente: {}
+        };
+        
+        // Array para almacenar pedidos anteriores (cargados desde localStorage)
+        let pedidosAnteriores = JSON.parse(localStorage.getItem('pedidosAnteriores')) || [];
+        
+        // Variable para almacenar el pedido que se está editando
+        let pedidoEditando = null;
+        
+        // Animación para los elementos del menú
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            menuItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+            
+            // Estilos iniciales para la animación
+            menuItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Efecto de like en Instagram
+            const likeButton = document.querySelector('.fa-heart');
+            likeButton.addEventListener('click', function() {
+                this.classList.toggle('far');
+                this.classList.toggle('fas');
+                this.style.color = this.classList.contains('fas') ? 'red' : '';
+            });
+            
+            // Botón de pedido
+            const orderButton = document.getElementById('orderButton');
+            const pedidoPanel = document.getElementById('pedidoPanel');
+            const overlay = document.getElementById('overlay');
+            const closePedido = document.getElementById('closePedido');
+            
+            orderButton.addEventListener('click', function() {
+                pedidoPanel.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closePedido.addEventListener('click', function() {
+                pedidoPanel.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            overlay.addEventListener('click', function() {
+                pedidoPanel.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Botón de ver pedidos anteriores
+            const verPedidosButton = document.getElementById('verPedidosButton');
+            const pedidosAnterioresPanel = document.getElementById('pedidosAnterioresPanel');
+            const closePedidosAnteriores = document.getElementById('closePedidosAnteriores');
+            
+            verPedidosButton.addEventListener('click', function() {
+                pedidosAnterioresPanel.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                mostrarPedidosAnteriores();
+            });
+            
+            closePedidosAnteriores.addEventListener('click', function() {
+                pedidosAnterioresPanel.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Manejar los botones de cantidad
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = this.getAttribute('data-id');
+                    const isPlus = this.classList.contains('plus');
+                    const display = document.querySelector(`.quantity-display[data-id="${id}"]`);
+                    let quantity = parseInt(display.textContent);
+                    
+                    if (isPlus) {
+                        quantity++;
+                    } else {
+                        if (quantity > 0) quantity--;
+                    }
+                    
+                    display.textContent = quantity;
+                    actualizarPedido(id, quantity);
+                    actualizarPanelPedido();
+                });
+            });
+            
+            // Manejar los extras
+            document.querySelectorAll('.extra-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const id = this.id;
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    
+                    if (this.checked) {
+                        pedido.extras[id] = {
+                            name: name,
+                            price: price,
+                            quantity: 1
+                        };
+                    } else {
+                        delete pedido.extras[id];
+                    }
+                    
+                    calcularTotal();
+                    actualizarPanelPedido();
+                });
+            });
+            
+            // Función para actualizar el objeto pedido
+            function actualizarPedido(id, quantity) {
+                const item = document.querySelector(`.menu-item[data-id="${id}"]`);
+                
+                if (quantity > 0) {
+                    pedido.items[id] = {
+                        name: item.getAttribute('data-name'),
+                        price: parseFloat(item.getAttribute('data-price')),
+                        quantity: quantity
+                    };
+                } else {
+                    delete pedido.items[id];
+                }
+                
+                calcularTotal();
+            }
+            
+            // Función para calcular el total
+            function calcularTotal() {
+                pedido.total = 0;
+                
+                // Sumar items del menú
+                for (const id in pedido.items) {
+                    pedido.total += pedido.items[id].price * pedido.items[id].quantity;
+                }
+                
+                // Sumar extras
+                for (const id in pedido.extras) {
+                    pedido.total += pedido.extras[id].price * pedido.extras[id].quantity;
+                }
+                
+                document.getElementById('totalPedido').textContent = pedido.total.toFixed(2);
+                
+                // Actualizar el botón de pedido con la cantidad total
+                let totalItems = 0;
+                for (const id in pedido.items) {
+                    totalItems += pedido.items[id].quantity;
+                }
+                
+                if (totalItems > 0) {
+                    orderButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Ver Pedido (${totalItems})`;
+                } else {
+                    orderButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Hacer Pedido`;
+                }
+            }
+            
+            // Función para actualizar el panel de pedido
+            function actualizarPanelPedido() {
+                const pedidoItems = document.getElementById('pedidoItems');
+                pedidoItems.innerHTML = '';
+                
+                // Agregar items del menú
+                for (const id in pedido.items) {
+                    const item = pedido.items[id];
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'pedido-item';
+                    itemElement.innerHTML = `
+                        <div>${item.name}</div>
+                        <div class="item-cantidad">
+                            <button class="quantity-btn" data-id="${id}" onclick="cambiarCantidad('${id}', -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" data-id="${id}" onclick="cambiarCantidad('${id}', 1)">+</button>
+                        </div>
+                        <div>$${(item.price * item.quantity).toFixed(2)}</div>
+                    `;
+                    pedidoItems.appendChild(itemElement);
+                }
+                
+                // Agregar extras
+                for (const id in pedido.extras) {
+                    const extra = pedido.extras[id];
+                    const extraElement = document.createElement('div');
+                    extraElement.className = 'pedido-item';
+                    extraElement.innerHTML = `
+                        <div>${extra.name}</div>
+                        <div class="item-cantidad">
+                            <button class="quantity-btn" data-id="${id}" onclick="cambiarCantidadExtra('${id}', -1)">-</button>
+                            <span>${extra.quantity}</span>
+                            <button class="quantity-btn" data-id="${id}" onclick="cambiarCantidadExtra('${id}', 1)">+</button>
+                        </div>
+                        <div>$${(extra.price * extra.quantity).toFixed(2)}</div>
+                    `;
+                    pedidoItems.appendChild(extraElement);
+                }
+            }
+            
+            // Función para mostrar pedidos anteriores
+            function mostrarPedidosAnteriores() {
+                const pedidosLista = document.getElementById('pedidosLista');
+                pedidosLista.innerHTML = '';
+                
+                if (pedidosAnteriores.length === 0) {
+                    pedidosLista.innerHTML = '<p>No hay pedidos anteriores</p>';
+                    return;
+                }
+                
+                pedidosAnteriores.forEach((pedido, index) => {
+                    const pedidoElement = document.createElement('div');
+                    pedidoElement.className = 'pedido-anterior';
+                    
+                    let itemsHTML = '';
+                    // Items del menú
+                    for (const id in pedido.items) {
+                        const item = pedido.items[id];
+                        itemsHTML += `
+                            <div class="pedido-anterior-item">
+                                <span>${item.quantity}x ${item.name}</span>
+                                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                            </div>
+                        `;
+                    }
+                    
+                    // Extras
+                    for (const id in pedido.extras) {
+                        const extra = pedido.extras[id];
+                        itemsHTML += `
+                            <div class="pedido-anterior-item">
+                                <span>${extra.quantity}x ${extra.name}</span>
+                                <span>$${(extra.price * extra.quantity).toFixed(2)}</span>
+                            </div>
+                        `;
+                    }
+                    
+                    pedidoElement.innerHTML = `
+                        <div class="pedido-anterior-header">
+                            <span>Pedido #${index + 1}</span>
+                            <span>${pedido.fecha}</span>
+                        </div>
+                        <div class="pedido-anterior-items">
+                            ${itemsHTML}
+                        </div>
+                        <div class="pedido-anterior-total">
+                            Total: $${pedido.total.toFixed(2)}
+                        </div>
+                        <div class="pedido-anterior-actions">
+                            <button class="repetir-pedido-btn" onclick="repetirPedido(${index})">
+                                <i class="fas fa-redo"></i> Repetir
+                            </button>
+                            <button class="edit-pedido-btn" onclick="editarPedido(${index})">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                            <button class="imprimir-pedido-btn" onclick="imprimirPedido(${index})">
+                                <i class="fas fa-print"></i> Imprimir
+                            </button>
+                        </div>
+                    `;
+                    
+                    pedidosLista.appendChild(pedidoElement);
+                });
+            }
+            
+            // Función para mostrar el ticket (con opción de tamaño pequeño)
+            function mostrarTicket(pedidoMostrar = null, small = false) {
+                const pedidoATicket = pedidoMostrar || pedido;
+                const ticketPanel = document.getElementById('ticketPanel');
+                const overlay = document.getElementById('overlay');
+                
+                // Configurar tamaño del ticket
+                if (small) {
+                    ticketPanel.classList.add('small');
+                } else {
+                    ticketPanel.classList.remove('small');
+                }
+                
+                // Llenar información del cliente
+                document.getElementById('ticketNombre').textContent = pedidoATicket.cliente.nombre;
+                document.getElementById('ticketTelefono').textContent = pedidoATicket.cliente.telefono;
+                document.getElementById('ticketDireccion').textContent = pedidoATicket.cliente.direccion;
+                document.getElementById('ticketFecha').textContent = pedidoATicket.fecha;
+                document.getElementById('ticketNotas').textContent = pedidoATicket.cliente.notas || 'Ninguna';
+                
+                // Llenar items del ticket
+                const ticketItems = document.getElementById('ticketItems');
+                ticketItems.innerHTML = '';
+                
+                // Agregar items del menú
+                for (const id in pedidoATicket.items) {
+                    const item = pedidoATicket.items[id];
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'ticket-item';
+                    itemElement.innerHTML = `
+                        <span>${item.quantity}x ${item.name}</span>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    `;
+                    ticketItems.appendChild(itemElement);
+                }
+                
+                // Agregar extras
+                for (const id in pedidoATicket.extras) {
+                    const extra = pedidoATicket.extras[id];
+                    const extraElement = document.createElement('div');
+                    extraElement.className = 'ticket-item';
+                    extraElement.innerHTML = `
+                        <span>${extra.quantity}x ${extra.name}</span>
+                        <span>$${(extra.price * extra.quantity).toFixed(2)}</span>
+                    `;
+                    ticketItems.appendChild(extraElement);
+                }
+                
+                // Actualizar total
+                document.getElementById('ticketTotal').textContent = pedidoATicket.total.toFixed(2);
+                
+                // Mostrar el ticket
+                ticketPanel.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Función para imprimir el ticket (con opción de tamaño pequeño)
+            function imprimirTicket(pedidoImprimir = null, small = false) {
+                const pedidoATicket = pedidoImprimir || pedido;
+                const ticketContent = `
+                    <div style="text-align: center; font-family: Arial, sans-serif; padding: ${small ? '10px' : '20px'}; font-size: ${small ? '12px' : '14px'};">
+                        <h2 style="color: #FF7B25; margin-bottom: 5px; font-size: ${small ? '1.2rem' : '1.5rem'};">BANDERILLAS HERRERA</h2>
+                        <p style="margin-bottom: ${small ? '10px' : '15px'}; font-size: ${small ? '0.9rem' : '1rem'};"><strong>Ticket de Compra</strong></p>
+                        <hr style="border-top: 1px dashed #ccc; margin: ${small ? '5px 0' : '10px 0'};">
+                        <div style="text-align: left; margin-bottom: ${small ? '10px' : '15px'}; font-size: ${small ? '0.8rem' : '0.9rem'};">
+                            <p><strong>Cliente:</strong> ${pedidoATicket.cliente.nombre}</p>
+                            <p><strong>Teléfono:</strong> ${pedidoATicket.cliente.telefono}</p>
+                            <p><strong>Dirección:</strong> ${pedidoATicket.cliente.direccion}</p>
+                            <p><strong>Fecha:</strong> ${pedidoATicket.fecha}</p>
+                            <p><strong>Notas:</strong> ${pedidoATicket.cliente.notas || 'Ninguna'}</p>
+                        </div>
+                        <hr style="border-top: 1px dashed #ccc; margin: ${small ? '5px 0' : '10px 0'};">
+                        <div style="margin: ${small ? '10px 0' : '15px 0'}; text-align: left; font-size: ${small ? '0.8rem' : '0.9rem'};">
+                            ${Array.from(document.getElementById('ticketItems').children).map(item => `
+                                <div style="display: flex; justify-content: space-between; margin-bottom: ${small ? '3px' : '5px'};">
+                                    <span>${item.children[0].textContent}</span>
+                                    <span>${item.children[1].textContent}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <hr style="border-top: 1px dashed #ccc; margin: ${small ? '5px 0' : '10px 0'};">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; margin-top: ${small ? '5px' : '10px'}; font-size: ${small ? '0.9rem' : '1rem'};">
+                            <span>TOTAL:</span>
+                            <span>$${pedidoATicket.total.toFixed(2)}</span>
+                        </div>
+                        <hr style="border-top: 1px dashed #ccc; margin: ${small ? '5px 0' : '10px 0'};">
+                        <p style="margin-top: ${small ? '10px' : '20px'}; font-size: ${small ? '0.7rem' : '0.9rem'};">¡Gracias por su compra!</p>
+                        <p style="font-size: ${small ? '0.7rem' : '0.9rem'};">Vuelva pronto</p>
+                    </div>
+                `;
+                
+                const ventanaImpresion = window.open('', '_blank');
+                ventanaImpresion.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Ticket de Compra - Banderillas Herrera</title>
+                        <style>
+                            body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+                            @media print {
+                                body { padding: ${small ? '10px' : '20px'}; }
+                                @page { size: auto; margin: 0; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${ticketContent}
+                        <script>
+                            setTimeout(() => {
+                                window.print();
+                                window.close();
+                            }, 200);
+                        <\/script>
+                    </body>
+                    </html>
+                `);
+                ventanaImpresion.document.close();
+            }
+            
+            // Función para cerrar el ticket
+            function cerrarTicket() {
+                const ticketPanel = document.getElementById('ticketPanel');
+                const overlay = document.getElementById('overlay');
+                
+                ticketPanel.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Event listeners para los botones del ticket
+            document.getElementById('printTicketBtn').addEventListener('click', () => {
+                const isSmall = document.getElementById('ticketPanel').classList.contains('small');
+                imprimirTicket(null, isSmall);
+            });
+            
+            document.getElementById('closeTicketBtn').addEventListener('click', cerrarTicket);
+            
+            // Event listeners para el modal de edición
+            const editModal = document.getElementById('editModal');
+            const closeEditModal = document.getElementById('closeEditModal');
+            const cancelEditBtn = document.getElementById('cancelEditBtn');
+            
+            closeEditModal.addEventListener('click', () => {
+                editModal.style.display = 'none';
+                overlay.classList.remove('active');
+            });
+            
+            cancelEditBtn.addEventListener('click', () => {
+                editModal.style.display = 'none';
+                overlay.classList.remove('active');
+            });
+            
+            overlay.addEventListener('click', () => {
+                if (editModal.style.display === 'flex') {
+                    editModal.style.display = 'none';
+                    overlay.classList.remove('active');
+                }
+            });
+            
+            // Hacer las funciones accesibles globalmente
+            window.cambiarCantidad = function(id, cambio) {
+                const display = document.querySelector(`.quantity-display[data-id="${id}"]`);
+                let quantity = parseInt(display.textContent) + cambio;
+                
+                if (quantity < 0) quantity = 0;
+                
+                display.textContent = quantity;
+                actualizarPedido(id, quantity);
+                actualizarPanelPedido();
+            };
+            
+            window.cambiarCantidadExtra = function(id, cambio) {
+                const checkbox = document.getElementById(id);
+                let quantity = pedido.extras[id].quantity + cambio;
+                
+                if (quantity < 1) {
+                    checkbox.checked = false;
+                    delete pedido.extras[id];
+                } else {
+                    pedido.extras[id].quantity = quantity;
+                }
+                
+                calcularTotal();
+                actualizarPanelPedido();
+            };
+            
+            window.repetirPedido = function(index) {
+                const pedidoARepetir = pedidosAnteriores[index];
+                
+                // Limpiar el pedido actual
+                for (const id in pedido.items) {
+                    document.querySelector(`.quantity-display[data-id="${id}"]`).textContent = '0';
+                }
+                
+                // Limpiar extras
+                document.querySelectorAll('.extra-checkbox').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                // Limpiar el objeto pedido
+                pedido.items = {};
+                pedido.extras = {};
+                pedido.total = 0;
+                pedido.cliente = {};
+                
+                // Copiar items del pedido anterior
+                for (const id in pedidoARepetir.items) {
+                    const item = pedidoARepetir.items[id];
+                    pedido.items[id] = {...item};
+                    document.querySelector(`.quantity-display[data-id="${id}"]`).textContent = item.quantity;
+                }
+                
+                // Copiar extras del pedido anterior
+                for (const id in pedidoARepetir.extras) {
+                    const extra = pedidoARepetir.extras[id];
+                    pedido.extras[id] = {...extra};
+                    document.getElementById(id).checked = true;
+                }
+                
+                // Copiar información del cliente
+                document.getElementById('nombre').value = pedidoARepetir.cliente.nombre;
+                document.getElementById('telefono').value = pedidoARepetir.cliente.telefono;
+                document.getElementById('direccion').value = pedidoARepetir.cliente.direccion;
+                document.getElementById('notas').value = pedidoARepetir.cliente.notas || '';
+                
+                // Actualizar total
+                pedido.total = pedidoARepetir.total;
+                document.getElementById('totalPedido').textContent = pedido.total.toFixed(2);
+                
+                // Actualizar la UI
+                actualizarPanelPedido();
+                
+                // Mostrar el panel de pedido
+                pedidosAnterioresPanel.classList.remove('active');
+                pedidoPanel.classList.add('active');
+                
+                // Actualizar el botón de pedido
+                let totalItems = 0;
+                for (const id in pedido.items) {
+                    totalItems += pedido.items[id].quantity;
+                }
+                
+                if (totalItems > 0) {
+                    orderButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Ver Pedido (${totalItems})`;
+                }
+            };
+            
+            window.editarPedido = function(index) {
+                pedidoEditando = index;
+                const pedidoAEditar = pedidosAnteriores[index];
+                const editModalBody = document.getElementById('editModalBody');
+                
+                // Limpiar el modal
+                editModalBody.innerHTML = '';
+                
+                // Crear formulario de edición
+                const form = document.createElement('form');
+                
+                // Agregar campos de cliente
+                form.innerHTML += `
+                    <div class="form-group">
+                        <label for="edit-nombre">Nombre completo:</label>
+                        <input type="text" id="edit-nombre" value="${pedidoAEditar.cliente.nombre}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-telefono">Teléfono:</label>
+                        <input type="tel" id="edit-telefono" value="${pedidoAEditar.cliente.telefono}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-direccion">Dirección de entrega:</label>
+                        <textarea id="edit-direccion" rows="3" required>${pedidoAEditar.cliente.direccion}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-notas">Notas adicionales:</label>
+                        <textarea id="edit-notas" rows="2">${pedidoAEditar.cliente.notas || ''}</textarea>
+                    </div>
+                    <div class="extras-container">
+                        <div class="extras-title">SALSAS Y ADEREZOS EXTRA ($5 c/u)</div>
+                        <div class="extras-grid">
+                            <div class="extra-item">
+                                <input type="checkbox" class="extra-checkbox" id="edit-salsa-valentina" data-name="Salsa Valentina" data-price="5" 
+                                    ${pedidoAEditar.extras['salsa-valentina'] ? 'checked' : ''}>
+                                <label class="extra-label" for="edit-salsa-valentina">Salsa Valentina</label>
+                                <span class="extra-price">$5</span>
+                            </div>
+                            <div class="extra-item">
+                                <input type="checkbox" class="extra-checkbox" id="edit-catsup" data-name="Catsup" data-price="5"
+                                    ${pedidoAEditar.extras['catsup'] ? 'checked' : ''}>
+                                <label class="extra-label" for="edit-catsup">Catsup</label>
+                                <span class="extra-price">$5</span>
+                            </div>
+                            <div class="extra-item">
+                                <input type="checkbox" class="extra-checkbox" id="edit-mostaza" data-name="Mostaza" data-price="5"
+                                    ${pedidoAEditar.extras['mostaza'] ? 'checked' : ''}>
+                                <label class="extra-label" for="edit-mostaza">Mostaza</label>
+                                <span class="extra-price">$5</span>
+                            </div>
+                            <div class="extra-item">
+                                <input type="checkbox" class="extra-checkbox" id="edit-aderezo" data-name="Aderezo Ranch" data-price="5"
+                                    ${pedidoAEditar.extras['aderezo'] ? 'checked' : ''}>
+                                <label class="extra-label" for="edit-aderezo">Aderezo Ranch</label>
+                                <span class="extra-price">$5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido-items" id="edit-pedido-items">
+                        <!-- Items del pedido se agregarán aquí -->
+                    </div>
+                    <div class="pedido-total">
+                        Total: $<span id="edit-total-pedido">${pedidoAEditar.total.toFixed(2)}</span>
+                    </div>
+                `;
+                
+                // Agregar items del pedido
+                const editPedidoItems = document.createElement('div');
+                editPedidoItems.id = 'edit-pedido-items';
+                
+                for (const id in pedidoAEditar.items) {
+                    const item = pedidoAEditar.items[id];
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'pedido-item';
+                    itemElement.innerHTML = `
+                        <div>${item.name}</div>
+                        <div class="item-cantidad">
+                            <button type="button" class="quantity-btn" onclick="editarCantidad('${id}', -1)">-</button>
+                            <span id="edit-cantidad-${id}">${item.quantity}</span>
+                            <button type="button" class="quantity-btn" onclick="editarCantidad('${id}', 1)">+</button>
+                        </div>
+                        <div>$${(item.price * item.quantity).toFixed(2)}</div>
+                    `;
+                    editPedidoItems.appendChild(itemElement);
+                }
+                
+                form.appendChild(editPedidoItems);
+                editModalBody.appendChild(form);
+                
+                // Mostrar el modal
+                editModal.style.display = 'flex';
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            window.editarCantidad = function(id, cambio) {
+                const cantidadElement = document.getElementById(`edit-cantidad-${id}`);
+                let cantidad = parseInt(cantidadElement.textContent) + cambio;
+                
+                if (cantidad < 0) cantidad = 0;
+                
+                cantidadElement.textContent = cantidad;
+                
+                // Actualizar el pedido que se está editando
+                const pedidoAEditar = pedidosAnteriores[pedidoEditando];
+                
+                if (cantidad > 0) {
+                    pedidoAEditar.items[id].quantity = cantidad;
+                } else {
+                    delete pedidoAEditar.items[id];
+                }
+                
+                // Recalcular total
+                let total = 0;
+                
+                // Sumar items del menú
+                for (const id in pedidoAEditar.items) {
+                    total += pedidoAEditar.items[id].price * pedidoAEditar.items[id].quantity;
+                }
+                
+                // Sumar extras
+                for (const id in pedidoAEditar.extras) {
+                    total += pedidoAEditar.extras[id].price * pedidoAEditar.extras[id].quantity;
+                }
+                
+                pedidoAEditar.total = total;
+                document.getElementById('edit-total-pedido').textContent = total.toFixed(2);
+            };
+            
+            window.imprimirPedido = function(index) {
+                const pedidoAImprimir = pedidosAnteriores[index];
+                mostrarTicket(pedidoAImprimir, true);
+                setTimeout(() => {
+                    imprimirTicket(pedidoAImprimir, true);
+                    cerrarTicket();
+                }, 500);
+            };
+            
+            // Guardar cambios en la edición
+            document.getElementById('saveEditBtn').addEventListener('click', function() {
+                const pedidoAEditar = pedidosAnteriores[pedidoEditando];
+                
+                // Actualizar información del cliente
+                pedidoAEditar.cliente.nombre = document.getElementById('edit-nombre').value;
+                pedidoAEditar.cliente.telefono = document.getElementById('edit-telefono').value;
+                pedidoAEditar.cliente.direccion = document.getElementById('edit-direccion').value;
+                pedidoAEditar.cliente.notas = document.getElementById('edit-notas').value;
+                
+                // Actualizar extras
+                const extrasIds = ['salsa-valentina', 'catsup', 'mostaza', 'aderezo'];
+                
+                extrasIds.forEach(id => {
+                    const checkbox = document.getElementById(`edit-${id}`);
+                    const name = checkbox.getAttribute('data-name');
+                    const price = parseFloat(checkbox.getAttribute('data-price'));
+                    
+                    if (checkbox.checked) {
+                        if (!pedidoAEditar.extras[id]) {
+                            pedidoAEditar.extras[id] = {
+                                name: name,
+                                price: price,
+                                quantity: 1
+                            };
+                        }
+                    } else {
+                        delete pedidoAEditar.extras[id];
+                    }
+                });
+                
+                // Recalcular total
+                let total = 0;
+                
+                // Sumar items del menú
+                for (const id in pedidoAEditar.items) {
+                    total += pedidoAEditar.items[id].price * pedidoAEditar.items[id].quantity;
+                }
+                
+                // Sumar extras
+                for (const id in pedidoAEditar.extras) {
+                    total += pedidoAEditar.extras[id].price * pedidoAEditar.extras[id].quantity;
+                }
+                
+                pedidoAEditar.total = total;
+                
+                // Guardar cambios en localStorage
+                localStorage.setItem('pedidosAnteriores', JSON.stringify(pedidosAnteriores));
+                
+                // Actualizar la lista de pedidos
+                mostrarPedidosAnteriores();
+                
+                // Cerrar el modal
+                editModal.style.display = 'none';
+                overlay.classList.remove('active');
+            });
+            
+            // Enviar formulario
+            document.getElementById('pedidoForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nombre = document.getElementById('nombre').value;
+                const telefono = document.getElementById('telefono').value;
+                const direccion = document.getElementById('direccion').value;
+                const notas = document.getElementById('notas').value;
+                
+                // Validación básica
+                if (!nombre || !telefono || !direccion) {
+                    alert('Por favor completa todos los campos obligatorios');
+                    return;
+                }
+                
+                if (Object.keys(pedido.items).length === 0 && Object.keys(pedido.extras).length === 0) {
+                    alert('Por favor agrega al menos un producto a tu pedido');
+                    return;
+                }
+                
+                // Guardar información del cliente
+                pedido.cliente = {
+                    nombre: nombre,
+                    telefono: telefono,
+                    direccion: direccion,
+                    notas: notas
+                };
+                
+                // Agregar fecha al pedido
+                const ahora = new Date();
+                pedido.fecha = ahora.toLocaleDateString('es-MX', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Agregar a pedidos anteriores (creamos una copia del pedido)
+                const pedidoCopia = JSON.parse(JSON.stringify(pedido));
+                pedidosAnteriores.unshift(pedidoCopia);
+                
+                // Guardar en localStorage
+                localStorage.setItem('pedidosAnteriores', JSON.stringify(pedidosAnteriores));
+                
+                // Mostrar el ticket en versión pequeña
+                mostrarTicket(null, true);
+                
+                // Limpiar el formulario
+                this.reset();
+                
+                // Limpiar cantidades de items
+                for (const id in pedido.items) {
+                    document.querySelector(`.quantity-display[data-id="${id}"]`).textContent = '0';
+                }
+                
+                // Limpiar extras
+                document.querySelectorAll('.extra-checkbox').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                // Limpiar el objeto pedido
+                pedido.items = {};
+                pedido.extras = {};
+                pedido.total = 0;
+                pedido.cliente = {};
+                
+                // Actualizar la UI
+                document.getElementById('totalPedido').textContent = '0';
+                document.getElementById('pedidoItems').innerHTML = '';
+                orderButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Hacer Pedido`;
+                
+                // Cerrar el panel de pedido
+                pedidoPanel.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
